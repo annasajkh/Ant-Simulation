@@ -1,0 +1,16 @@
+com/github/annasajkh/Rectangle.java
+ com.github.annasajkh.Rectangle
+ com.github.annasajkh.Rectangle$1
+ com.github.annasajkh.Trail
+com/github/annasajkh/InputManager.java
+ com.github.annasajkh.InputManager
+com/github/annasajkh/Core.java
+ com.github.annasajkh.Core
+com/github/annasajkh/GameObject.java
+ com.github.annasajkh.GameObject
+com/github/annasajkh/Food.java
+ com.github.annasajkh.Food
+com/github/annasajkh/AntHome.java
+ com.github.annasajkh.AntHome
+com/github/annasajkh/Ant.java
+ com.github.annasajkh.Ant
