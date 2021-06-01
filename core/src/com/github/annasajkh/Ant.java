@@ -18,17 +18,25 @@ public class Ant extends GameObject
 	static Vector2 rotater;
 	Food target;
 	List<Rectangle> path;
+	int index;
+	int goBack = 1;
 	
 	public void follow()
 	{
-		if(path.isEmpty())
+		if(index == 0)
 		{
 			Core.foods.remove(foodToCarry);
 			foodToCarry = null;
-			return;
+			goBack = -1;
 		}
 		
-		Rectangle target = path.get(path.size() - 1);
+		if(index > path.size() - 1)
+		{
+			goBack = 1;
+			index--;
+		}
+		
+		Rectangle target = path.get(index);
 		
 		float dst = Vector2.dst(x,y,target.x,target.y);
 		
@@ -43,7 +51,7 @@ public class Ant extends GameObject
 		
 		boolean intersect;
 		
-		if(path.size() > 1)
+		if(index >= 1)
 		{
 			intersect = 200 * 200 > (dx * dx) + (dy * dy);			
 		}
@@ -51,10 +59,11 @@ public class Ant extends GameObject
 		{
 			intersect = 3 * 3 > (dx * dx) + (dy * dy);	
 		}
+
 		
 		if(intersect)
 		{
-			path.remove(path.size() - 1);
+			index -= goBack;
 		}
 		
 	}
@@ -111,7 +120,7 @@ public class Ant extends GameObject
 		if(rect != null)
 		{
 			if(foodToCarry != null)
-			{
+			{				
 				follow();
 				rect.trail = Trail.BACK;
 			}
@@ -119,10 +128,15 @@ public class Ant extends GameObject
 			{
 				rect.trail = Trail.EXPLORE;
 			}
-			
-			if(foodToCarry == null)
-			{				
+			if(foodToCarry == null && goBack == -1)
+			{
+				follow();
+				rect.trail = Trail.BACK;
+			}
+			if(foodToCarry == null && goBack != -1 && target == null)
+			{
 				path.add(rect);
+				index = path.size() - 1;
 			}
 		}
 	}
