@@ -114,8 +114,8 @@ public class Ant extends GameObject
 		}
 		
 		Rectangle rect = Core.gridHash.get(""+	(int)(MathUtils.ceil(x / Core.gridSize) * Core.gridSize - Core.gridSize / 2) 
-												+ ","+
-												(int)(MathUtils.ceil(y / Core.gridSize) * Core.gridSize - Core.gridSize / 2));
+							+ ","+
+							(int)(MathUtils.ceil(y / Core.gridSize) * Core.gridSize - Core.gridSize / 2));
 		
 		if(rect != null)
 		{
@@ -128,11 +128,13 @@ public class Ant extends GameObject
 			{
 				rect.trail = Trail.EXPLORE;
 			}
+			
 			if(foodToCarry == null && goBack == -1)
 			{
 				follow();
 				rect.trail = Trail.BACK;
 			}
+			
 			if(foodToCarry == null && goBack != -1 && target == null)
 			{
 				path.add(rect);
