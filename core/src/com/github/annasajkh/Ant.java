@@ -145,15 +145,15 @@ public class Ant extends GameObject
 	public void draw()
 	{
 		Core.spriteBatch.draw(	sprite,
-								x - sprite.getWidth() / 2,
-								y - sprite.getHeight() / 2,
-								sprite.getWidth() / 2,
-								sprite.getHeight() / 2,
-								sprite.getWidth(),
-								sprite.getHeight(),
-								sprite.getScaleX(),
-								sprite.getScaleY(),
-								rotation - 90);
+					x - sprite.getWidth() / 2,
+					y - sprite.getHeight() / 2,
+					sprite.getWidth() / 2,
+					sprite.getHeight() / 2,
+					sprite.getWidth(),
+					sprite.getHeight(),
+					sprite.getScaleX(),
+					sprite.getScaleY(),
+					rotation - 90);
 	}
 
 	
