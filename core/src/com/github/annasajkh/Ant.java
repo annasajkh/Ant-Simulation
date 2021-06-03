@@ -10,14 +10,19 @@ import com.badlogic.gdx.math.Vector2;
 public class Ant extends GameObject
 {
 	Sprite sprite;
+	
 	Vector2 velocity;
 	Vector2 acceleration;
-	float rotation;
-	Food foodToCarry;
-	static float maxVelocity = 250;
 	static Vector2 rotater;
+	
+	Food foodToCarry;
 	Food target;
+		
+	float rotation;
+	static float maxVelocity = 250;
+	
 	List<Rectangle> path;
+	
 	int index;
 	int goBack = 1;
 	
@@ -73,8 +78,10 @@ public class Ant extends GameObject
 		super(x, y);
 		
 		this.sprite = sprite;
+		
 		acceleration = new Vector2();
 		rotater = new Vector2();
+		
 		path = new ArrayList<>();
 	}
 
