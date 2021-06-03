@@ -19,9 +19,9 @@ public class Food extends GameObject
 		final float dx = ant.x - x;
 		final float dy = ant.y - y;
 		
-		boolean inRadius = 	(radius + Core.antSprite.getHeight() / 2 + Core.antVisionRadius) * 
-							(radius + Core.antSprite.getHeight() / 2 + Core.antVisionRadius) > 
-							(dx * dx) + (dy * dy);
+		boolean inRadius =	(radius + Core.antSprite.getHeight() / 2 + Core.antVisionRadius) * 
+					radius + Core.antSprite.getHeight() / 2 + Core.antVisionRadius) > 
+					(dx * dx) + (dy * dy);
 		if(inRadius)
 		{
 			float len;
@@ -82,8 +82,8 @@ public class Food extends GameObject
 		final float dy = ant.y - y;
 		
 		return 	(radius + Core.antSprite.getHeight() / 2) *  
-				(radius + Core.antSprite.getHeight() / 2) > 
-				(dx * dx) + (dy * dy);
+			(radius + Core.antSprite.getHeight() / 2) > 
+			(dx * dx) + (dy * dy);
 	}
 
 	@Override
