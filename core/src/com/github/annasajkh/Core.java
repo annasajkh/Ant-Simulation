@@ -23,25 +23,30 @@ public class Core extends ApplicationAdapter
 {
 	
 	public static AntHome antHome;
+	public static Ant AntToFocus;
+	
 	public static Rectangle[][] grid;
-	public static float gridSize = 15;
+	public static Ant[] ants;
+	public static List<Food> foods;
+	public static HashMap<String,Rectangle> gridHash;
 	
 	public static ShapeRenderer shapeRenderer;
 	public static SpriteBatch spriteBatch;
+	
 	public static Sprite antSprite;
 	public static OrthographicCamera camera;
+	
 	public static float zoomSpeed = 1;
 	public static float zoomFactor = 0.1f;
 	public static float maxZoom = 100f;
 	public static float roomSize = 3000;
-	public static int antNum = 100;
-	public static Ant AntToFocus;
-	public static Vector3 mousePos;
 	public static float antVisionRadius = 100;
+	public static float gridSize = 15;
 	
-	public static Ant[] ants;
-	public static List<Food> foods;
-	public static HashMap<String,Rectangle> gridHash;
+	public static int antNum = 100;
+	
+	public static Vector3 mousePos;
+	
 	
 	@Override
 	public void create()
