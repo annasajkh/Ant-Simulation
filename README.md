@@ -1,5 +1,5 @@
 # Ant-Simulation
-this not finish idk if it will ever finish 
+good enough 
 
 # Controls
 r = focus to a random ant\
